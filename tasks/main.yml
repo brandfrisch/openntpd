@@ -1,0 +1,32 @@
+---
+# tasks file for openntpd
+
+- name: Install requirements
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - "{{ openntpd_packages }}"
+    - "{{ openntpd_additional_packages }}"
+  tags:
+    - package
+    - openntpd
+
+- name: Place config
+  template:
+    src: "{{ openntp_config_file }}"
+    dest: "/etc/openntpd/ntpd.conf"
+  notify:
+    - restart openntpd
+  tags:
+    - config
+    - openntpd
+
+- name: start openntpd
+  service:
+    name: openntpd
+    state: started
+    enabled: yes
+  tags:
+    - service
+    - openntpd

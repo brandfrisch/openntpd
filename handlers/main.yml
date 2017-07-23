@@ -1,0 +1,17 @@
+---
+# handlers file for openntpd
+
+- name: start openntpd
+  service:
+    name: openntpd
+    state: started
+
+- name: stop openntpd
+  service:
+    name: openntpd
+    state: stopped
+
+- name: restart openntpd
+  service:
+    name: openntpd
+    state: restarted

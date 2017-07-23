@@ -1,0 +1,9 @@
+# {{ ansible_managed }}
+#
+# Addresses to listen on (ntpd does not listen by default)
+listen on {{ openntp_bind_address }}
+
+# Choose servers announced from Debian NTP Pool
+{% for timeserver in openntp_timeservers %}
+servers {{ timeserver }}
+{% endfor %}

@@ -1,0 +1,13 @@
+---
+# defaults file for openntpd
+openntp_timeservers:
+  - "0.debian.pool.ntp.org"
+  - "1.debian.pool.ntp.org"
+  - "2.debian.pool.ntp.org"
+  - "3.debian.pool.ntp.org"
+openntp_bind_address: 127.0.0.1
+openntp_config_file: ntpd.conf.j2
+
+openntpd_packages:
+  - openntpd
+openntpd_additional_packages: []
