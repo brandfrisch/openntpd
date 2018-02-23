@@ -3,8 +3,8 @@ version: 2
 jobs:
   build:
 
-    docker:
-      - image: docker:latest
+    machine:
+      enabled: true
 
     working_directory: ~/openntpd
 
