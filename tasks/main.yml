@@ -16,6 +16,9 @@
   template:
     src: "{{ openntp_config_file }}"
     dest: "/etc/openntpd/ntpd.conf"
+    owner: root
+    group: root
+    mode: 0644
   notify:
     - restart openntpd
   tags:

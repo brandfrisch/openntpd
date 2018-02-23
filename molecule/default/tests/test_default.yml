@@ -1,0 +1,8 @@
+---
+package:
+  openntpd:
+    installed: true
+service:
+  openntpd:
+    enabled: true
+    running: true
