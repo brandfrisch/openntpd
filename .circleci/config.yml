@@ -17,8 +17,7 @@ jobs:
 
       - run:
           name: "Install tools"
-          command: "apk add --update python python-dev py-pip build-base
-                    openssl-dev libffi-dev linux-headers"
+          command: "apt-get install -yq python python-dev python-pip"
 
       - restore_cache:
           keys:
