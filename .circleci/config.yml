@@ -3,8 +3,8 @@ version: 2
 jobs:
   build:
 
-    machine:
-      enabled: true
+    docker:
+      - image: docker:latest
 
     working_directory: ~/openntpd
 
@@ -17,7 +17,8 @@ jobs:
 
       - run:
           name: "Install tools"
-          command: "apt-get install -yq python python-dev python-pip"
+          command: "apk add --update python python-dev py-pip build-base
+                    openssl-dev libffi-dev linux-headers"
 
       - restore_cache:
           keys:
